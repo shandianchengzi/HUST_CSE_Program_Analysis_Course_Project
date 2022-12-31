@@ -1,5 +1,11 @@
-
+./switch.sh 52f90cd 1.0.3
+./switch.sh e1204d8 2.0.0-rc1
 ./switch.sh 5668fd9 2.0.0-rc2
 ./switch.sh ad3c0a5 2.0.0-rc3
 ./switch.sh 0714fb5 2.0.0-rc4
 ./switch.sh 10d88e8 2.0.0-rc5
+./switch.sh c10639f 2.0.0-rc6
+./switch.sh 185a6fe 2.0.0-rc7
+./switch.sh 6c1cbef 2.0.0
+./switch.sh 241a391 2.0.1
+./switch.sh e9c1c17 2.0.1.post1
