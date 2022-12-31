@@ -39,7 +39,6 @@ Examining ../unicorn/glib_compat/grand.c <br>
 Examining ../unicorn/glib_compat/gpattern.c <br>
 Examining ../unicorn/samples/mem_apis.c <br>
 Examining ../unicorn/samples/shellcode.c <br>
-Examining ../unicorn/samples/sample_ctl.c <br>
 Examining ../unicorn/samples/sample_sparc.c <br>
 Examining ../unicorn/samples/sample_m68k.c <br>
 Examining ../unicorn/samples/sample_x86_32_gdt_and_seg_regs.c <br>
@@ -499,11 +498,9 @@ Examining ../unicorn/tests/fuzz/fuzz_emu_sparc_32be.c <br>
 Examining ../unicorn/tests/unit/test_x86.c <br>
 Examining ../unicorn/tests/unit/acutest.h <br>
 Examining ../unicorn/tests/unit/test_sparc.c <br>
-Examining ../unicorn/tests/unit/test_mem.c <br>
 Examining ../unicorn/tests/unit/test_arm64.c <br>
 Examining ../unicorn/tests/unit/test_ppc.c <br>
 Examining ../unicorn/tests/unit/test_m68k.c <br>
-Examining ../unicorn/tests/unit/test_ctl.c <br>
 Examining ../unicorn/tests/unit/test_riscv.c <br>
 Examining ../unicorn/tests/unit/test_mips.c <br>
 Examining ../unicorn/tests/unit/unicorn_test.h <br>
@@ -590,12 +587,12 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Consider using strcat_s, strncat, strlcat, or snprintf (warning: strncat is
   easily misused). </i>
-<li>../unicorn/include/unicorn/platform.h:256: <b>  [4] </b> (format) <i> snprintf:
+<li>../unicorn/include/unicorn/platform.h:205: <b>  [4] </b> (format) <i> snprintf:
   If format strings can be influenced by an attacker, they can be exploited,
   and note that sprintf variations do not always \0-terminate (<a
   href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
   constant for the format specification. </i>
-<li>../unicorn/include/unicorn/platform.h:256: <b>  [4] </b> (format) <i> _snprintf:
+<li>../unicorn/include/unicorn/platform.h:205: <b>  [4] </b> (format) <i> _snprintf:
   If format strings can be influenced by an attacker, they can be exploited,
   and note that sprintf variations do not always \0-terminate (<a
   href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
@@ -857,36 +854,31 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:683: <b>  [4] </b> (format) <i> snprintf:
-  If format strings can be influenced by an attacker, they can be exploited,
-  and note that sprintf variations do not always \0-terminate (<a
-  href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
-  constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1715: <b>  [4] </b> (format) <i> fprintf:
+<li>../unicorn/qemu/tcg/tcg.c:1667: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1781: <b>  [4] </b> (format) <i> fprintf:
+<li>../unicorn/qemu/tcg/tcg.c:1733: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1823: <b>  [4] </b> (format) <i> fprintf:
+<li>../unicorn/qemu/tcg/tcg.c:1775: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1876: <b>  [4] </b> (format) <i> fprintf:
+<li>../unicorn/qemu/tcg/tcg.c:1828: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/qemu/tcg/tcg.c:2823: <b>  [4] </b> (format) <i> fprintf:
+<li>../unicorn/qemu/tcg/tcg.c:2775: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/samples/sample_batch_reg.c:41: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/samples/sample_batch_reg.c:38: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/samples/sample_batch_reg.c:88: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/samples/sample_batch_reg.c:84: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
@@ -898,11 +890,11 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   This causes a new program to execute and is difficult to use safely (<a
   href="https://cwe.mitre.org/data/definitions/78.html">CWE-78</a>). try
   using a library call that implements the same functionality if available. </i>
-<li>../unicorn/tests/unit/acutest.h:506: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/tests/unit/acutest.h:532: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:514: <b>  [4] </b> (format) <i> vsnprintf:
+<li>../unicorn/tests/unit/acutest.h:540: <b>  [4] </b> (format) <i> vsnprintf:
   If format strings can be influenced by an attacker, they can be exploited,
   and note that sprintf variations do not always \0-terminate (<a
   href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
@@ -911,41 +903,41 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:713: <b>  [4] </b> (format) <i> vprintf:
+<li>../unicorn/tests/unit/acutest.h:712: <b>  [4] </b> (format) <i> vprintf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:726: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/tests/unit/acutest.h:725: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:743: <b>  [4] </b> (format) <i> vsnprintf:
+<li>../unicorn/tests/unit/acutest.h:742: <b>  [4] </b> (format) <i> vsnprintf:
   If format strings can be influenced by an attacker, they can be exploited,
   and note that sprintf variations do not always \0-terminate (<a
   href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
   constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:756: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/tests/unit/acutest.h:754: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:773: <b>  [4] </b> (format) <i> vsnprintf:
+<li>../unicorn/tests/unit/acutest.h:771: <b>  [4] </b> (format) <i> vsnprintf:
   If format strings can be influenced by an attacker, they can be exploited,
   and note that sprintf variations do not always \0-terminate (<a
   href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>). Use a
   constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:812: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/tests/unit/acutest.h:811: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:972: <b>  [4] </b> (format) <i> printf:
+<li>../unicorn/tests/unit/acutest.h:979: <b>  [4] </b> (format) <i> printf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:985: <b>  [4] </b> (format) <i> vprintf:
+<li>../unicorn/tests/unit/acutest.h:992: <b>  [4] </b> (format) <i> vprintf:
   If format strings can be influenced by an attacker, they can be exploited
   (<a href="https://cwe.mitre.org/data/definitions/134.html">CWE-134</a>).
   Use a constant for the format specification. </i>
-<li>../unicorn/tests/unit/acutest.h:1363: <b>  [4] </b> (buffer) <i> sprintf:
+<li>../unicorn/tests/unit/acutest.h:1328: <b>  [4] </b> (buffer) <i> sprintf:
   Does not check for buffer overflows (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Use
   sprintf_s, snprintf, or vsnprintf. </i>
@@ -964,14 +956,14 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   such as key and nonce creation (<a
   href="https://cwe.mitre.org/data/definitions/327.html">CWE-327</a>). Use a
   more secure technique for acquiring random values. </i>
-<li>../unicorn/qemu/tcg/tcg.c:3726: <b>  [3] </b> (buffer) <i> getenv:
+<li>../unicorn/qemu/tcg/tcg.c:3678: <b>  [3] </b> (buffer) <i> getenv:
   Environment variables are untrustable input if they can be set by an
   attacker. They can have any content and length, and the same variable can
   be set more than once (<a
   href="https://cwe.mitre.org/data/definitions/807.html">CWE-807</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). Check
   environment variables carefully before using them. </i>
-<li>../unicorn/qemu/tcg/tcg.c:3775: <b>  [3] </b> (buffer) <i> getenv:
+<li>../unicorn/qemu/tcg/tcg.c:3727: <b>  [3] </b> (buffer) <i> getenv:
   Environment variables are untrustable input if they can be set by an
   attacker. They can have any content and length, and the same variable can
   be set more than once (<a
@@ -1041,7 +1033,7 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   around to create a race condition, control its ancestors, or change its
   contents? (<a
   href="https://cwe.mitre.org/data/definitions/362.html">CWE-362</a>). </i>
-<li>../unicorn/include/uc_priv.h:378: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/include/uc_priv.h:295: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
@@ -1158,7 +1150,7 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/include/tcg/tcg.h:1129: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/include/tcg/tcg.h:1126: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
@@ -1459,39 +1451,39 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/target/i386/translate.c:9154: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/i386/translate.c:9122: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/i386/translate.c:9183: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/i386/translate.c:9151: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/i386/translate.c:9191: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/i386/translate.c:9159: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/i386/translate.c:9194: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/i386/translate.c:9162: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/i386/unicorn.c:296: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/qemu/target/i386/unicorn.c:293: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/target/i386/unicorn.c:887: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/qemu/target/i386/unicorn.c:890: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
@@ -1639,14 +1631,14 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/sparc/translate.c:6040: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/sparc/translate.c:6036: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/target/sparc/translate.c:6046: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/target/sparc/translate.c:6042: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
@@ -1748,68 +1740,68 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/tcg/tcg.c:727: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/qemu/tcg/tcg.c:679: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/tcg/tcg.c:954: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:906: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1676: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:1628: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:1697: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:1649: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:2809: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:2761: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:2849: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:2801: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:3394: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/qemu/tcg/tcg.c:3346: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/tcg/tcg.c:3943: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:3895: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:3956: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/qemu/tcg/tcg.c:3908: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/qemu/tcg/tcg.c:4098: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/qemu/tcg/tcg.c:4050: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/qemu/tcg/tcg.c:4106: <b>  [2] </b> (misc) <i> fopen:
+<li>../unicorn/qemu/tcg/tcg.c:4058: <b>  [2] </b> (misc) <i> fopen:
   Check when opening files - can an attacker redirect it (via symlinks),
   force the opening of special file type (e.g., device files), move things
   around to create a race condition, control its ancestors, or change its
@@ -1836,48 +1828,41 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/samples/mem_apis.c:154: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/samples/mem_apis.c:133: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/samples/mem_apis.c:156: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/samples/mem_apis.c:134: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/samples/mem_apis.c:238: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/samples/mem_apis.c:213: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/samples/mem_apis.c:318: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/samples/mem_apis.c:291: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/samples/sample_arm64.c:41: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/samples/sample_arm64.c:34: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/samples/sample_arm64.c:43: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/samples/sample_arm64.c:38: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/samples/sample_ctl.c:202: <b>  [2] </b> (buffer) <i> char:
-  Statically-sized arrays can be improperly restricted, leading to potential
-  overflows or other issues (<a
-  href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
-  Perform bounds checking, use functions that limit length, or ensure that
-  the size is larger than the maximum possible length. </i>
-<li>../unicorn/samples/sample_x86.c:383: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/samples/sample_x86.c:349: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/samples/shellcode.c:54: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/samples/shellcode.c:46: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
@@ -1976,141 +1961,124 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/tests/unit/acutest.h:387: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:397: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:510: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:536: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:601: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:602: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:759: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:757: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:822: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1142: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:829: <b>  [2] </b> (buffer) <i> char:
-  Statically-sized arrays can be improperly restricted, leading to potential
-  overflows or other issues (<a
-  href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
-  Perform bounds checking, use functions that limit length, or ensure that
-  the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1141: <b>  [2] </b> (buffer) <i> char:
-  Statically-sized arrays can be improperly restricted, leading to potential
-  overflows or other issues (<a
-  href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
-  Perform bounds checking, use functions that limit length, or ensure that
-  the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1169: <b>  [2] </b> (buffer) <i> sprintf:
+<li>../unicorn/tests/unit/acutest.h:1153: <b>  [2] </b> (buffer) <i> sprintf:
   Does not check for buffer overflows (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Use
   sprintf_s, snprintf, or vsnprintf. Risk is low because the source has a
   constant maximum length. </i>
-<li>../unicorn/tests/unit/acutest.h:1182: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1163: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1298: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1270: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1323: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1293: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1572: <b>  [2] </b> (integer) <i> atoi:
+<li>../unicorn/tests/unit/acutest.h:1518: <b>  [2] </b> (integer) <i> atoi:
   Unless checked, the resulting number can exceed the expected range (<a
   href="https://cwe.mitre.org/data/definitions/190.html">CWE-190</a>). If
   source untrusted, check both minimum and maximum, even if the input had no
   minus sign (large numbers can roll over into negative number; consider
   saving to an unsigned value if that is intended). </i>
-<li>../unicorn/tests/unit/acutest.h:1607: <b>  [2] </b> (integer) <i> atoi:
+<li>../unicorn/tests/unit/acutest.h:1550: <b>  [2] </b> (integer) <i> atoi:
   Unless checked, the resulting number can exceed the expected range (<a
   href="https://cwe.mitre.org/data/definitions/190.html">CWE-190</a>). If
   source untrusted, check both minimum and maximum, even if the input had no
   minus sign (large numbers can roll over into negative number; consider
   saving to an unsigned value if that is intended). </i>
-<li>../unicorn/tests/unit/acutest.h:1610: <b>  [2] </b> (misc) <i> fopen:
+<li>../unicorn/tests/unit/acutest.h:1553: <b>  [2] </b> (misc) <i> fopen:
   Check when opening files - can an attacker redirect it (via symlinks),
   force the opening of special file type (e.g., device files), move things
   around to create a race condition, control its ancestors, or change its
   contents? (<a
   href="https://cwe.mitre.org/data/definitions/362.html">CWE-362</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:1661: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1598: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/acutest.h:1666: <b>  [2] </b> (misc) <i> open:
+<li>../unicorn/tests/unit/acutest.h:1603: <b>  [2] </b> (misc) <i> open:
   Check when opening files - can an attacker redirect it (via symlinks),
   force the opening of special file type (e.g., device files), move things
   around to create a race condition, control its ancestors, or change its
   contents? (<a
   href="https://cwe.mitre.org/data/definitions/362.html">CWE-362</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:1686: <b>  [2] </b> (integer) <i> atoi:
+<li>../unicorn/tests/unit/acutest.h:1623: <b>  [2] </b> (integer) <i> atoi:
   Unless checked, the resulting number can exceed the expected range (<a
   href="https://cwe.mitre.org/data/definitions/190.html">CWE-190</a>). If
   source untrusted, check both minimum and maximum, even if the input had no
   minus sign (large numbers can roll over into negative number; consider
   saving to an unsigned value if that is intended). </i>
-<li>../unicorn/tests/unit/acutest.h:1868: <b>  [2] </b> (buffer) <i> char:
+<li>../unicorn/tests/unit/acutest.h:1799: <b>  [2] </b> (buffer) <i> char:
   Statically-sized arrays can be improperly restricted, leading to potential
   overflows or other issues (<a
   href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Perform bounds checking, use functions that limit length, or ensure that
   the size is larger than the maximum possible length. </i>
-<li>../unicorn/tests/unit/test_ctl.c:147: <b>  [2] </b> (buffer) <i> char:
-  Statically-sized arrays can be improperly restricted, leading to potential
-  overflows or other issues (<a
-  href="https://cwe.mitre.org/data/definitions/119.html">CWE-119</a>!/<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
-  Perform bounds checking, use functions that limit length, or ensure that
-  the size is larger than the maximum possible length. </i>
-<li>../unicorn/uc.c:1076: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/uc.c:1497: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/uc.c:1798: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/uc.c:1498: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
-<li>../unicorn/uc.c:1969: <b>  [2] </b> (buffer) <i> memcpy:
+<li>../unicorn/uc.c:1665: <b>  [2] </b> (buffer) <i> memcpy:
+  Does not check for buffer overflows when copying to destination (<a
+  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
+  sure destination can always hold the source data. </i>
+<li>../unicorn/uc.c:1667: <b>  [2] </b> (buffer) <i> memcpy:
   Does not check for buffer overflows when copying to destination (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). Make
   sure destination can always hold the source data. </i>
@@ -2138,11 +2106,7 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   Does not handle strings that are not \0-terminated; if given one it may
   perform an over-read (it could cause a crash if unprotected) (<a
   href="https://cwe.mitre.org/data/definitions/126.html">CWE-126</a>). </i>
-<li>../unicorn/include/uc_priv.h:51: <b>  [1] </b> (buffer) <i> read:
-  Check buffer boundaries if used in a loop including recursive loops (<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
-  href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/include/unicorn/platform.h:219: <b>  [1] </b> (obsolete) <i> usleep:
+<li>../unicorn/include/unicorn/platform.h:168: <b>  [1] </b> (obsolete) <i> usleep:
   This C routine is considered obsolete (as opposed to the shell command by
   the same name). The interaction of this function with SIGALRM and other
   timer functions such as sleep(), alarm(), setitimer(), and nanosleep() is
@@ -2180,19 +2144,23 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   (<a href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>).
   Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily
   misused). Risk is low because the source is a constant character. </i>
-<li>../unicorn/qemu/softmmu/memory.c:86: <b>  [1] </b> (buffer) <i> read:
+<li>../unicorn/qemu/softmmu/memory.c:81: <b>  [1] </b> (buffer) <i> read:
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/qemu/softmmu/memory.c:87: <b>  [1] </b> (buffer) <i> read:
+<li>../unicorn/qemu/softmmu/memory.c:91: <b>  [1] </b> (buffer) <i> read:
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/qemu/softmmu/memory.c:460: <b>  [1] </b> (buffer) <i> read:
+<li>../unicorn/qemu/softmmu/memory.c:92: <b>  [1] </b> (buffer) <i> read:
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/qemu/softmmu/memory.c:979: <b>  [1] </b> (buffer) <i> read:
+<li>../unicorn/qemu/softmmu/memory.c:463: <b>  [1] </b> (buffer) <i> read:
+  Check buffer boundaries if used in a loop including recursive loops (<a
+  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
+  href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
+<li>../unicorn/qemu/softmmu/memory.c:982: <b>  [1] </b> (buffer) <i> read:
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
@@ -2224,7 +2192,7 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/qemu/tcg/tcg.c:3925: <b>  [1] </b> (buffer) <i> strlen:
+<li>../unicorn/qemu/tcg/tcg.c:3877: <b>  [1] </b> (buffer) <i> strlen:
   Does not handle strings that are not \0-terminated; if given one it may
   perform an over-read (it could cause a crash if unprotected) (<a
   href="https://cwe.mitre.org/data/definitions/126.html">CWE-126</a>). </i>
@@ -2258,53 +2226,45 @@ Examining ../unicorn/msvc/ppc64-softmmu/config-target.h <br>
   valloc(); it is marked as obsolete in BSD 4.3, as legacy in SUSv2, and is
   no longer defined in SUSv3. In some cases, malloc()'s alignment may be
   sufficient. </i>
-<li>../unicorn/tests/unit/acutest.h:812: <b>  [1] </b> (buffer) <i> strlen:
+<li>../unicorn/tests/unit/acutest.h:811: <b>  [1] </b> (buffer) <i> strlen:
   Does not handle strings that are not \0-terminated; if given one it may
   perform an over-read (it could cause a crash if unprotected) (<a
   href="https://cwe.mitre.org/data/definitions/126.html">CWE-126</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:913: <b>  [1] </b> (buffer) <i> strlen:
+<li>../unicorn/tests/unit/acutest.h:921: <b>  [1] </b> (buffer) <i> strlen:
   Does not handle strings that are not \0-terminated; if given one it may
   perform an over-read (it could cause a crash if unprotected) (<a
   href="https://cwe.mitre.org/data/definitions/126.html">CWE-126</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:1344: <b>  [1] </b> (buffer) <i> strlen:
+<li>../unicorn/tests/unit/acutest.h:1313: <b>  [1] </b> (buffer) <i> strlen:
   Does not handle strings that are not \0-terminated; if given one it may
   perform an over-read (it could cause a crash if unprotected) (<a
   href="https://cwe.mitre.org/data/definitions/126.html">CWE-126</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:1413: <b>  [1] </b> (buffer) <i> strncpy:
+<li>../unicorn/tests/unit/acutest.h:1375: <b>  [1] </b> (buffer) <i> strncpy:
   Easily used incorrectly; doesn't always \0-terminate or check for invalid
   pointers [MS-banned] (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>). </i>
-<li>../unicorn/tests/unit/acutest.h:1677: <b>  [1] </b> (buffer) <i> read:
+<li>../unicorn/tests/unit/acutest.h:1614: <b>  [1] </b> (buffer) <i> read:
   Check buffer boundaries if used in a loop including recursive loops (<a
   href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
   href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/uc.c:618: <b>  [1] </b> (obsolete) <i> usleep:
+<li>../unicorn/uc.c:569: <b>  [1] </b> (obsolete) <i> usleep:
   This C routine is considered obsolete (as opposed to the shell command by
   the same name). The interaction of this function with SIGALRM and other
   timer functions such as sleep(), alarm(), setitimer(), and nanosleep() is
   unspecified (<a
   href="https://cwe.mitre.org/data/definitions/676.html">CWE-676</a>). Use
   nanosleep(2) or setitimer(2) instead. </i>
-<li>../unicorn/uc.c:1104: <b>  [1] </b> (buffer) <i> read:
-  Check buffer boundaries if used in a loop including recursive loops (<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
-  href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
-<li>../unicorn/uc.c:1111: <b>  [1] </b> (buffer) <i> read:
-  Check buffer boundaries if used in a loop including recursive loops (<a
-  href="https://cwe.mitre.org/data/definitions/120.html">CWE-120</a>, <a
-  href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a>). </i>
 </ul>
 <h2>Analysis Summary</h2>
 <p>
-Hits = 330
+Hits = 324
 <br>
-Lines analyzed = 428966 in approximately 3.80 seconds (112994 lines/second)
+Lines analyzed = 424404 in approximately 3.66 seconds (116103 lines/second)
 <br>
-Physical Source Lines of Code (SLOC) = 338781
+Physical Source Lines of Code (SLOC) = 335198
 <br>
-Hits@level = [0] 1219 [1]  40 [2] 214 [3]   8 [4]  68 [5]   0 <br>
-Hits@level+ = [0+] 1549 [1+] 330 [2+] 290 [3+]  76 [4+]  68 [5+]   0 <br>
-Hits/KSLOC@level+ = [0+] 4.57228 [1+] 0.974081 [2+] 0.85601 [3+] 0.224334 [4+] 0.20072 [5+]   0 <br>
+Hits@level = [0] 1175 [1]  38 [2] 211 [3]   8 [4]  67 [5]   0 <br>
+Hits@level+ = [0+] 1499 [1+] 324 [2+] 286 [3+]  75 [4+]  67 [5+]   0 <br>
+Hits/KSLOC@level+ = [0+] 4.47198 [1+] 0.966593 [2+] 0.853227 [3+] 0.223748 [4+] 0.199882 [5+]   0 <br>
 Dot directories skipped = 2 (--followdotdir overrides)
 <br>
 Minimum risk level = 1
