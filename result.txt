@@ -1,0 +1,165 @@
+_flawfinder-2.0.0-rc3.html
+CWE- 432
+CWE-20 16
+CWE-78 3
+CWE-119 62
+CWE-120 208
+CWE-126 18
+CWE-134 30
+CWE-190 3
+CWE-327 5
+CWE-362 51
+CWE-367 31
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.1.post1.html
+CWE- 499
+CWE-20 19
+CWE-78 3
+CWE-119 69
+CWE-120 228
+CWE-126 24
+CWE-134 32
+CWE-190 3
+CWE-327 5
+CWE-362 66
+CWE-367 45
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0-rc6.html
+CWE- 490
+CWE-20 18
+CWE-78 3
+CWE-119 69
+CWE-120 222
+CWE-126 22
+CWE-134 32
+CWE-190 3
+CWE-327 5
+CWE-362 66
+CWE-367 45
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0-rc2.html
+CWE- 432
+CWE-20 16
+CWE-78 3
+CWE-119 62
+CWE-120 208
+CWE-126 18
+CWE-134 30
+CWE-190 3
+CWE-327 5
+CWE-362 51
+CWE-367 31
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-1.0.3.html
+CWE- 285
+CWE-20 10
+CWE-78 2
+CWE-119 48
+CWE-120 109
+CWE-126 16
+CWE-134 39
+CWE-190 1
+CWE-327 4
+CWE-362 35
+CWE-367 18
+CWE-676 3
+CWE-807 0
+----------------------------
+_flawfinder-2.0.0-rc1.html
+CWE- 432
+CWE-20 16
+CWE-78 3
+CWE-119 62
+CWE-120 208
+CWE-126 18
+CWE-134 30
+CWE-190 3
+CWE-327 5
+CWE-362 51
+CWE-367 31
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.1.html
+CWE- 499
+CWE-20 19
+CWE-78 3
+CWE-119 69
+CWE-120 228
+CWE-126 24
+CWE-134 32
+CWE-190 3
+CWE-327 5
+CWE-362 66
+CWE-367 45
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0-rc5.html
+CWE- 444
+CWE-20 18
+CWE-78 3
+CWE-119 66
+CWE-120 213
+CWE-126 18
+CWE-134 31
+CWE-190 3
+CWE-327 5
+CWE-362 51
+CWE-367 31
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0.html
+CWE- 495
+CWE-20 19
+CWE-78 3
+CWE-119 69
+CWE-120 224
+CWE-126 24
+CWE-134 32
+CWE-190 3
+CWE-327 5
+CWE-362 66
+CWE-367 45
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0-rc4.html
+CWE- 440
+CWE-20 16
+CWE-78 3
+CWE-119 66
+CWE-120 212
+CWE-126 18
+CWE-134 30
+CWE-190 3
+CWE-327 5
+CWE-362 51
+CWE-367 31
+CWE-676 3
+CWE-807 2
+----------------------------
+_flawfinder-2.0.0-rc7.html
+CWE- 490
+CWE-20 18
+CWE-78 3
+CWE-119 69
+CWE-120 222
+CWE-126 22
+CWE-134 32
+CWE-190 3
+CWE-327 5
+CWE-362 66
+CWE-367 45
+CWE-676 3
+CWE-807 2
+----------------------------
