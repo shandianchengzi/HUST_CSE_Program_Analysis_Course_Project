@@ -1,3 +1,6 @@
 [submodule "unicorn"]
 	path = unicorn
 	url = git@github.com:unicorn-engine/unicorn.git
+[submodule "rt-thread"]
+	path = rt-thread
+	url = https://gitee.com/rtthread/rt-thread.git
