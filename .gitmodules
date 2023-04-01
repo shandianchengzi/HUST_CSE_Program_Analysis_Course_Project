@@ -1,7 +1,6 @@
 [submodule "unicorn"]
 	path = unicorn
 	url = git@github.com:unicorn-engine/unicorn.git
-# [submodule "rt-thread"]
-# 	path = rt-thread
-# 	url = git@github.com:shandianchengzi/rt-thread.git
-# 	branch = no0xa1
+[submodule "rt-thread"]
+	path = rt-thread
+	url = git@github.com:shandianchengzi/rt-thread.git
