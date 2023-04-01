@@ -52,6 +52,16 @@ git clone [仓库地址]
 ./tools/usualtools/run_sample.sh rt-thread output.csv
 ```
 
+如果你希望这个脚本别占用你的终端，那请使用nohup后台运行：
+```bash
+nohup ./tools/usualtools/run_sample.sh rt-thread output.csv &
+```
+
+当你需要查看脚本是否运行完成时，可以运行ps指令：
+```bash
+ps -aux | grep run_sample.sh
+```
+
 如果频繁检出非ASCII码的异常字符，并且是无法确定编码格式的，可以调用脚本清除所有的非ascii码字符（注意，别用来清.git目录）：
 
 ```bash

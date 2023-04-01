@@ -442,3 +442,11 @@ mv: 无法获取'temp.txt' 的文件状态(stat): 没有那个文件或目录
 mv: 无法获取'temp.txt' 的文件状态(stat): 没有那个文件或目录
 ./tools/usualtools/del_strange0xa1.sh: 行 10: AGREEMENT.pdf: 没有那个文件或目录
 mv: 无法获取'temp.txt' 的文件状态(stat): 没有那个文件或目录
+rt-thread/bsp/
+rt-thread/components/
+rt-thread/documentation/
+rt-thread/examples/
+rt-thread/include/
+rt-thread/libcpu/
+rt-thread/src/
+rt-thread/tools/
