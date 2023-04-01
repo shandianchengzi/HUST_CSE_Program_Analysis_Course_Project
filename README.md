@@ -1,3 +1,7 @@
+# 用途
+
+使用flawfinder对目录进行静态分析，
+并输出所有的CWE以及问题至output文件夹里。
 
 # Quick Start
 
@@ -5,49 +9,47 @@
 在开始前，需要安装一些依赖：
 
 ```bash
-sudo apt install -y git gitstats
 pip install flawfinder
 ```
 
-## 开始分析
-
-如果只需要得到我的分析结果，那么只需要运行以下指令即可：
+## 更新子模块
+现在分析的项目目录下有子模块rt-thread和unicorn，如果你需要分析其中一个，请直接使用以下指令克隆：
 
 ```bash
-./build.sh
+git submodule update --remote <submodule_name>
 ```
 
-分析结果均在`html`文件夹下。
+其中`<submodule_name>`是要更新的子模块的名称。例如，如果要更新名为`rt-thread`的子模块，就运行：
 
-为了减轻分析压力，我还顺手写了一些代码，在`tools`文件夹下。
-
-其中`matlab`文件夹下的代码用于作图。
-
-`find_str.py`用于查找分析结果中有多少个CWE并输出，运行方式：`python tools/find_str.py`。
+```bash
+git submodule update --remote rt-thread
+```
 
 ## 分析其他仓库
 
-如果你希望用本仓库的代码分析其他的仓库，只需以下简（复）单（杂）的几个步骤：
+请先fork本仓库，并将修改提交保存至自己的仓库目录下。
 
-### Step 1 添加你所分析的仓库
-
-首先运行：
+如果你希望用本仓库的代码分析其他的仓库，只需以下简单的一个步骤：添加你所分析的仓库。
 
 ```bash
 git submodule add [仓库地址]
 git clone [仓库地址]
 ```
 
-然后将本仓库的所有`unicorn`都改为你自己的仓库。
+## 开始分析
 
-### Step 2 添加你需要分析的版本信息
+所有常用工具都在`tools/usualtools`下。
 
-修改`build.sh`，添加分支号和版本名。
-
-### Step 3 开始分析
-
-也是运行这行指令就行：
+直接运行以下指令，参数为你要分析的目录、分析结果的名字：
 
 ```bash
-./build.sh
+./tools/usualtools/run_sample.sh <your dir> <output_file_name>
 ```
+
+例如，以下指令将会对rt-thread进行分析，结果保存在output/output.csv中：
+
+```bash
+./tools/usualtools/run_sample.sh rt-thread output.csv
+```
+
+如果频繁检出
