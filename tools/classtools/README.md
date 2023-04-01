@@ -6,6 +6,9 @@
 
 分析结果：gitstats和flawfinder工具，对11个版本的unicorn库的静态分析结果。
 
+# About
+2022年秋季华中科技大学程序安全分析课程项目的分析结果。该项目使用FlawFinder对开源项目unicorn的v1.0.3到v2.0.1.post1这12个release版本进行静态分析。FlawFinder是一款C/C++的静态分析工具，unicorn是纯c语言编写的仿真工具。
+
 # Quick Start
 
 ## 安装相关依赖
