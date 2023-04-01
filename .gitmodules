@@ -4,3 +4,4 @@
 [submodule "rt-thread"]
 	path = rt-thread
 	url = git@github.com:shandianchengzi/rt-thread.git
+	branch = no0xa1

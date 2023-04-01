@@ -52,4 +52,8 @@ git clone [仓库地址]
 ./tools/usualtools/run_sample.sh rt-thread output.csv
 ```
 
-如果频繁检出
+如果频繁检出非ASCII码的异常字符，并且是无法确定编码格式的，可以调用脚本清除所有的非ascii码字符（注意，别用来清.git目录）：
+
+```bash
+./tools/usualtools/del_strange0xa1.sh <your dir>
+```
