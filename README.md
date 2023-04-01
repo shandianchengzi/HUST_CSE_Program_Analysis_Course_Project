@@ -43,7 +43,7 @@ git clone [仓库地址]
 直接运行以下指令，参数为你要分析的目录、分析结果的名字：
 
 ```bash
-./tools/usualtools/run_sample.sh <your dir> <output_file_name>
+./tools/usualtools/run_sample.sh <your dir> <output_file_name> [<output_format>]
 ```
 
 例如，以下指令将会对rt-thread进行分析，结果保存在output/output.csv中：
@@ -51,6 +51,8 @@ git clone [仓库地址]
 ```bash
 ./tools/usualtools/run_sample.sh rt-thread output.csv
 ```
+
+如果你希望输出html格式，则运行如下指令：
 
 如果你希望这个脚本别占用你的终端，那请使用nohup后台运行：
 ```bash
