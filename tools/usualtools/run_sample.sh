@@ -23,7 +23,7 @@ for dir_one in ${dir_list}; do
     PYTHONUTF8=0 flawfinder --$format > "$dir_one/_flawfinder_output.$format" $dir_one
 done
 
-cppcheck $dir_path --enable=all 2>output/cppcheck-output.txt
+cppcheck $dir_path --enable=all 2>output/output-cppcheck.txt
 
 wait
 

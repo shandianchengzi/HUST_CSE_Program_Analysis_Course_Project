@@ -1,7 +1,17 @@
 # 用途
 
-使用flawfinder对目录进行静态分析，
+使用flawfinder和cppcheck对目录进行静态分析，
 并输出所有的CWE以及问题至output文件夹里。
+
+# 分析结果
+已有的分析结果在`results`目录下。
+
+```bash
+results/rt-thread-cppcheck.txt # cppcheck 的结果
+results/rt-thread-flawfinder.csv # flawfinder 的结果
+```
+
+如果确定是fp，可以把fp条目删除并提交pr。
 
 # Quick Start
 
@@ -40,6 +50,10 @@ git clone [仓库地址]
 
 所有常用工具都在`tools/usualtools`下。
 
+### run_sample.sh
+
+#### 使用
+
 直接运行以下指令，参数为你要分析的目录、分析结果的名字：
 
 ```bash
@@ -53,6 +67,9 @@ git clone [仓库地址]
 ```
 
 如果你希望输出html格式，则运行如下指令：
+```bash
+./tools/usualtools/run_sample.sh rt-thread output.html html
+```
 
 如果你希望这个脚本别占用你的终端，那请使用nohup后台运行：
 ```bash
@@ -64,7 +81,16 @@ nohup ./tools/usualtools/run_sample.sh rt-thread output.csv &
 ps -aux | grep run_sample.sh
 ```
 
-如果频繁检出非ASCII码的异常字符，并且是无法确定编码格式的，可以调用脚本清除所有的非ascii码字符（注意，别用来清.git目录）：
+#### 结果
+
+1. output/output_file_name: 是flawfinder的分析结果；
+2. output/output-cppcheck.txt: 是cppcheck的分析结果。
+
+### del_strange0xa1.sh
+
+用于删除非ASCII码字符。
+
+如果频繁检出非ASCII码的异常字符，并且是无法确定编码格式的，可以调用该脚本清除所有的非ascii码字符（注意，别用来清.git目录）：
 
 ```bash
 ./tools/usualtools/del_strange0xa1.sh <your dir>
